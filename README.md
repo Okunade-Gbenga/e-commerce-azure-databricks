@@ -13,3 +13,21 @@ In this project, we will be using some ETL, analytics, and BI tools on Microsoft
 6. **Azure Synapse** - This is the analytics tool offered by Azure. We can use the transformed data to make a relational database model and query data for analytics
 
 7. **PowerBi**- Used for presenting dashboards with the data that is the relational format
+
+
+
+### Extract
+Using Data Factory, we establish a source (the raw files from this repository) and the sink (the staging area where the data will be sent).
+![Project architecture](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/extract.png)
+
+
+### TRANSFORM
+After the data has been inserted into the first staging area, we will use Databricks to transform the data through cleaning and EDA. Databricks goes in this process with the use of a notebook that is also linked in this repository.
+
+The majority of the tables were already pretty decent in terms of cleaning, there were just some minor datatype changes for a better schema representation of the columns. There was one exception with the table "order_reviews", there were some problematic rows that were giving error messages when Synapse was trying to read it, those rows had double quotes in them, so I managed to delete all of those rows.
+
+Once the data is transformed, it is then sent to another staging area where it will be ingested by Synapse.
+
+### LOAD
+Data is now loaded into Synapse, we will make this data become relational by creating an ERD so we can query some answers from it.
+![Project architecture](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/load.png)
