@@ -42,7 +42,7 @@ SELECT [customer_state], COUNT(*) AS [total]
  GROUP BY [customer_state]
  ORDER BY [total] DESC
 ```
-![Project architecture](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/result1.jpg)
+![result](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/result1.jpg)
 
 
 ```
@@ -52,4 +52,17 @@ SELECT [payment_type], COUNT(*) AS [total], ROUND(AVG([payment_value]),2) AS [av
  WHERE [payment_type] != 'not_defined'
  GROUP BY [payment_type]
  ORDER BY [total] DESC
+```
+
+![result2](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/result3.jpg)
+
+```
+-- for testing the joins: join the "order_paymets", "orders", "order_items", and "products" tables and get the "order_status", "payment_type", average price in descending order, and the "product_category_name"
+SELECT TOP (100) o.[order_status], op.[payment_type], AVG(oi.[price]) AS [average_price], p.[product_category_name]
+FROM [ecommerceDB].[dbo].[orders] o
+JOIN [ecommerceDB].[dbo].[order_payments] op ON o.[order_id] = op.[order_id]
+JOIN [ecommerceDB].[dbo].[order_items] oi ON o.[order_id] = oi.[order_id]
+JOIN [ecommerceDB].[dbo].[products] p ON oi.[product_id] = p.[product_id]
+GROUP BY o.[order_status], op.[payment_type], p.[product_category_name]
+ORDER BY [average_price] DESC;
 ```
