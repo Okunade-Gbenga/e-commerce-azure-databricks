@@ -42,3 +42,14 @@ SELECT [customer_state], COUNT(*) AS [total]
  GROUP BY [customer_state]
  ORDER BY [total] DESC
 ```
+![Project architecture](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/result1.jpg)
+
+
+```
+-- on the "order_payments" table, find the average payment of the payment type and the number of times it was used, from top to bottom
+SELECT [payment_type], COUNT(*) AS [total], ROUND(AVG([payment_value]),2) AS [average_payment]
+ FROM [ecommerceDB].[dbo].[order_payments]
+ WHERE [payment_type] != 'not_defined'
+ GROUP BY [payment_type]
+ ORDER BY [total] DESC
+```
