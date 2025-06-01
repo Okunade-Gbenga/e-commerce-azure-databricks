@@ -18,7 +18,13 @@ In this project, we will be using some ETL, analytics, and BI tools on Microsoft
 
 ### Extract
 Using Data Factory, we establish a source (the raw files from this repository) and the sink (the staging area where the data will be sent).
+
+![Project architecture](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/sql%20db.png)
+
 ![Project architecture](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/extract.png)
+
+
+
 
 
 ### TRANSFORM
@@ -72,6 +78,10 @@ ORDER BY [average_price] DESC;
 ## Dashboard
 
 Before we start making our dashboards, we have to establish a connection between Power Bi and Synapse. To do that, download Power Bi desktop and grab the "Serverless SQL endpoint" inside the resource group that you are using.
+
+![result2](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/sql%20db.png)
+
+
 
 ![result2](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/dashb.jpg)
 
