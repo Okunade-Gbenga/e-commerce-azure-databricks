@@ -31,3 +31,14 @@ Once the data is transformed, it is then sent to another staging area where it w
 ### LOAD
 Data is now loaded into Synapse, we will make this data become relational by creating an ERD so we can query some answers from it.
 ![Project architecture](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/load.png)
+
+
+We can now query some answers using SQL.
+
+```
+checking the states that have the biggest amount of customers
+SELECT [customer_state], COUNT(*) AS [total]
+ FROM [ecommerceDB].[dbo].[customers]
+ GROUP BY [customer_state]
+ ORDER BY [total] DESC
+```
