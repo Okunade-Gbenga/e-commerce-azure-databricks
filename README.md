@@ -73,3 +73,5 @@ ORDER BY [average_price] DESC;
 
 Before we start making our dashboards, we have to establish a connection between Power Bi and Synapse. To do that, download Power Bi desktop and grab the "Serverless SQL endpoint" inside the resource group that you are using.
 
+![result2](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/dashb.jpg)
+
