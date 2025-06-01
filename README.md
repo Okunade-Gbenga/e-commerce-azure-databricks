@@ -66,3 +66,10 @@ JOIN [ecommerceDB].[dbo].[products] p ON oi.[product_id] = p.[product_id]
 GROUP BY o.[order_status], op.[payment_type], p.[product_category_name]
 ORDER BY [average_price] DESC;
 ```
+![result2](https://github.com/Okunade-Gbenga/e-commerce-azure-databricks/blob/main/result2.jpg)
+
+
+## Dashboard
+
+Before we start making our dashboards, we have to establish a connection between Power Bi and Synapse. To do that, download Power Bi desktop and grab the "Serverless SQL endpoint" inside the resource group that you are using.
+
